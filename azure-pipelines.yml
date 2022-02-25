@@ -19,5 +19,11 @@ steps:
     packageType: 'sdk'
     version: '5.x'
 
+- task: Npm@1
+  displayName: 'Run npm install'
+  inputs:
+    command: 'install'
+    verbose: false
+
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
